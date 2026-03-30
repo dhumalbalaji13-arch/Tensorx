@@ -64,7 +64,7 @@ def login():
             session['user_id'] = user['id']
             session['username'] = user['username']
             flash('Login successful', 'success')
-            return redirect(url_for('mainweb'))
+            return redirect(url_for('index'))
 
         flash('Invalid username or password', 'error')
         return redirect(url_for('login'))
@@ -117,7 +117,7 @@ def contact():
 
     if not name or not email or not message:
         flash('Please fill in all fields', 'error')
-        return redirect(url_for('mainweb') + '#contact')
+        return redirect(url_for('index') + '#contact')
 
     try:
         conn = get_db_connection()
@@ -130,7 +130,7 @@ def contact():
     except Exception as e:
         flash('Error sending message. Please try again.', 'error')
     
-    return redirect(url_for('mainweb') + '#contact')
+    return redirect(url_for('index') + '#contact')
 
 
 @app.route('/logout')
@@ -142,7 +142,7 @@ def logout():
 
 @app.route('/main')
 def mainweb():
-    return render_template('mainweb.html')
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
