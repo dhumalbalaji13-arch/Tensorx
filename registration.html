@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>registeration form</title>
+<link rel="stylesheet" href="/static/registration.css">
+</head>
+<body>
+<div class="container">
+<div class="registeration">Registration Form</div>
+<form action="/register" method="post">
+
+<div class="container2">
+
+<div class="inputbox">
+<span class="inputtext">Full Name</span>
+<input type="text" name="full_name" placeholder="enter your full name" required>
+</div>
+
+<div class="inputbox">
+<span class="inputtext">User Name</span>
+<input type="text" name="username" placeholder="enter your user name" required>
+</div>
+
+<div class="inputbox">
+<span class="inputtext">Email</span>
+<input type="email" placeholder="enter your email id"required>
+</div>
+
+<div class="inputbox">
+<span class="inputtext">Phone Number</span>
+<input type="tel" placeholder="enter your contact number"required>
+</div>
+
+<div class="inputbox">
+<span class="inputtext">Password</span>
+<input type="password" name="password" placeholder="enter your password" required>
+</div>
+
+<div class="inputbox">
+<span class="inputtext">Confirm Password</span>
+<input type="password" name="confirm_password" placeholder="confirm your password" required>
+</div>
+<input class="lastinput" button type="submit" value="Register Your Data">
+</form>
+</div>  
+</div>
+</body>
+</html>

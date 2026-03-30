@@ -1,0 +1,275 @@
+*{box-sizing: border-box;
+}
+        
+body 
+{
+margin: 0;
+padding: 0;
+font-family: "Segoe UI", Tahoma, sans-serif;
+background-color: #f0f2f5;color: #333;
+animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header */
+.navbar 
+{
+background-color: #1a2a5a; 
+padding: 15px 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+animation: slideDown 0.8s ease-out;
+}
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.logo 
+{
+font-size: 25px;
+font-weight: bold;
+color: #f0c674; 
+animation: bounceIn 1s ease-out;
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.nav-links a
+{
+color: white;
+text-decoration: none;
+margin-left: 20px;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+
+.nav-links a:hover
+{
+color: #f0c674;
+transform: scale(1.1);
+}
+
+ /* Hero  */
+.hero
+{
+background:url('') no-repeat center center/cover;;
+text-align: center;
+padding: 100px 20px;
+border-bottom: 1px solid #ddd;
+animation: fadeInUp 1s ease-out 0.5s both;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 
+{
+font-size: 40px;
+margin-bottom: 10px;
+animation: slideInLeft 1s ease-out 0.7s both;
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.hero h1 span 
+{
+color: #f0c674;
+}
+
+.hero p 
+{
+font-size: 20px;
+color: #666;
+margin-bottom: 30px;
+animation: slideInRight 1s ease-out 0.9s both;
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.btn-main
+{
+background-color: #f26522;
+color: white;
+padding: 15px 40px;
+font-size: 18px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.btn-main:hover
+{
+background-color: #d4541a;
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(242, 101, 34, 0.4);
+}
+
+/*  Subject Grid  */
+
+.title-bar 
+{
+background-color: #1a2a5a;
+color: #f0c674;
+text-align: center;
+padding: 20px;
+font-weight: bold;
+letter-spacing: 1px;
+animation: fadeIn 1s ease-out 1.1s both;
+}
+
+.container 
+{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding: 50px 20px;
+gap: 25px;
+}
+
+.card
+{
+background: white;
+border: 2px solid #1a2a5a;
+width: 300px;
+border-radius: 8px;
+padding: 20px;
+text-align: center;
+}
+
+.img-box 
+{
+height: 150px;
+background-color: #e0e0e0;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #888;font-style: italic;
+}
+
+.card h3 
+{
+margin-top: 0;
+color: #1a2a5a;
+}
+
+.btn-link 
+{
+background-color: #e8d9ba;
+padding: 8px 15px;
+text-decoration: none;color: #222;
+font-size: 12px;margin: 4px;
+display: inline-block;
+border-radius: 2px;
+border: 1px solid #d8c8a8;
+}
+
+.btn-link:hover 
+{
+background-color: #d8c8a8;
+}
+
+/*  About Section */
+.about-section 
+{
+background-color: white;
+padding: 60px 20px;
+display: flex;
+justify-content: center;
+align-items: center;gap: 40px;
+}
+
+.about-img 
+{
+width: 280px;height: 160px;
+background-color: #bdc3c7;
+}
+
+.about-text h2 
+{
+color: #1a2a5a;
+margin-top: 0;
+}
+
+/* Contact Section */
+
+.container-contact
+{
+width: 80%;
+margin: 0 auto;
+overflow: hidden;
+}
+
+.contact
+{
+padding: 50px 0;
+}
+
+.contact h2
+{
+text-align: center;
+margin-bottom: 30px;
+font-size: 2.5em; color: #003C71;
+}
+
+#contact-form
+{
+max-width: 600px;
+margin: 0 auto;
+}
+
+#contact-form label 
+{
+display: block;
+margin: 10px 0 5px;
+}
+
+#contact-form input, #contact-form textarea 
+{
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+#contact-form button 
+{
+background: #003C71;
+color: #fff;
+padding: 15px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+font-size: 1em;
+}
+
+#contact-form button:hover 
+{
+background: #002d72;
+}
+
+/*  Footer  */
+.footer 
+{
+background-color: #1a2a5a;color: #fff;
+padding: 30px;
+text-align: center;
+font-size: 15px;
+line-height: 1.6;
+}

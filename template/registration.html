@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>registeration form</title>
+<link rel="stylesheet" href="/static/registration.css">
+</head>
+<body>
+<div class="container">
+<div class="registeration">Registration Form</div>
+<form action="/register" method="post">
+
+<!-- {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-messages">
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %} -->
+
+<div class="container2">
+
+<div class="inputbox">
+<span class="inputtext">Full Name</span>
+<input type="text" name="full_name" placeholder="enter your full name">
+</div>
+
+<div class="inputbox">
+<span class="inputtext">User Name</span>
+<input type="text" name="username" placeholder="enter your user name" required>
+</div>
+
+<div class="inputbox">
+<span class="inputtext">Email</span>
+<input type="email" name="email" placeholder="enter your email id">
+</div>
+
+<div class="inputbox">
+<span class="inputtext">Phone Number</span>
+<input type="tel" name="phone" placeholder="enter your contact number">
+</div>
+
+<div class="inputbox">
+<span class="inputtext">Password</span>
+<input type="password" name="password" placeholder="enter your password" required>
+</div>
+
+<div class="inputbox">
+<span class="inputtext">Confirm Password</span>
+<input type="password" name="confirm_password" placeholder="confirm your password" required>
+</div>
+<div class="inputbox">
+    <a href="mainweb.html" class="lastinput">Register Your Data</a>
+</div>
+</form>
+</div>  
+</div>
+<script src="/static/script.js"></script>
+</body>
+</html>

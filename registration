@@ -1,0 +1,30 @@
+import sqlite3
+
+# connect database
+conn = sqlite3.connect('users.db')
+
+# create cursor
+c = conn.cursor()
+
+# create table
+c.execute("""CREATE TABLE IF NOT EXISTS users (
+    full_name TEXT,
+    username TEXT,
+    email TEXT,
+    phone TEXT,
+    password TEXT
+)""")
+
+
+c.execute("INSERT INTO users VALUES ('Balaji Dhumal', 'balajidhumal', 'balaji@gmail.com', '9876543210', '1234')")
+
+# save data
+conn.commit()
+
+
+c.execute("SELECT * FROM users WHERE username='balajidhumal'")
+
+print(c.fetchall())
+
+# close connection
+conn.close()
