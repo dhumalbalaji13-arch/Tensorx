@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #010525, #182c61);
+    padding: 24px 12px;
+}
+
+.container {
+    background: rgba(130, 130, 164, 0.94);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 560px;
+    animation: fadeInSlide 0.8s ease-out forwards;
+}
+
+.registeration {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.form-note {
+    text-align: center;
+    color: #eef2ff;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+.flash-messages {
+    margin: 0 0 14px;
+}
+
+.flash {
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.flash.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.flash.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+form .container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inputbox {
+    width: 100%;
+}
+
+.inputtext {
+    display: block;
+    color: #f8fafc;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+form .container2 .inputbox input {
+    border-radius: 8px;
+    border: 2px solid transparent;
+    height: 45px;
+    width: 100%;
+    padding: 0 15px;
+    outline: none;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+form .container2 .inputbox input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+.lastinput {
+    width: 100%;
+    height: 45px;
+    background-color: rgb(89, 89, 119);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.lastinput:hover {
+    background: rgb(70, 70, 96);
+    transform: translateY(-2px);
+}
+
+.form-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    margin-top: 14px;
+}
+
+.form-links a {
+    color: #eef2ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

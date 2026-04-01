@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EduHub - Subjects</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='subject.css') }}">
+</head>
+<body>
+
+<div class="title-bar">SUBJECTS{% if session.get('display_name') %} - Welcome {{ session.get('display_name') }}{% endif %}</div>
+<p class="page-subtitle">Choose a subject to open notes, video playlists, and quizzes.</p>
+
+<div class="page-actions">
+  <a href="{{ url_for('index') }}" class="btn-link">Home</a>
+  <a href="{{ url_for('logout') }}" class="btn-link">Logout</a>
+</div>
+
+<div class="container">
+<div class="card">
+<div class="img-box1"></div>
+<h3>Chemistry</h3>
+<p class="subject-copy">Open unit notes, video links, and chemistry quizzes.</p>
+<a href="{{ url_for('chemistry') }}" class="btn-link">View</a>
+</div>
+
+<div class="card">
+<div class="img-box2"></div>
+<h3>Maths</h3>
+<p class="subject-copy">Access calculus, matrices, and PDE study material.</p>
+<a href="{{ url_for('mathematics') }}" class="btn-link">View</a>
+</div>
+
+<div class="card">
+<div class="img-box3"></div>
+<h3>FPL</h3>
+<p class="subject-copy">Practice programming basics with notes and quizzes.</p>
+<a href="{{ url_for('fpl') }}" class="btn-link">View</a>
+</div>
+</div>
+
+<div class="footer">2026 MindMesh | Contact Us | Privacy Policy <br>
+<small>Follow us on Social Media</small>
+</div>
+</body>
+</html>

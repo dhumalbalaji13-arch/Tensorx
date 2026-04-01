@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EduHub - My Engineering Project</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+</head>
+<body>
+<div id="loader">LOADING</div>
+
+<div class="navbar">
+  <div class="logo">
+    <div class="logo-text">MindMesh</div>
+  </div>
+  <div class="nav-links">
+    <a href="{{ url_for('index') }}#Home">Home</a>
+    <a href="{{ url_for('index') }}#About">About</a>
+    <a href="{{ url_for('index') }}#contact">Contact</a>
+    {% if session.get('user_id') %}
+      <a href="{{ url_for('subjects') }}">Subjects</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+      <a href="{{ url_for('login') }}">Login</a>
+    {% endif %}
+  </div>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-messages">
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<section id="Home" class="Home">
+  <div class="hero">
+    {% if session.get('display_name') %}
+      <div class="welcome-pill">Signed in as {{ session.get('display_name') }}</div>
+    {% endif %}
+    <h1>Your 1st Year <span>Engineering</span> Companion</h1>
+    <p>Stop searching, start learning. Access high-quality notes and quizzes for chemistry, maths, and more all in one place.</p>
+    <div class="hero-actions">
+      <a href="{{ url_for('register') }}" class="btn-main">Start Learning</a>
+      <a href="{{ url_for('subjects') if session.get('user_id') else url_for('login') }}" class="btn-secondary">Explore Subjects</a>
+    </div>
+  </div>
+</section>
+
+<div class="title-bar">EXPLORE OUR SUBJECTS</div>
+
+<div class="container">
+  <div class="card">
+    <div class="img-box1"></div>
+    <h3>Chemistry</h3>
+    <p class="card-copy">Notes, video links, and quiz practice for engineering chemistry.</p>
+    <a href="{{ url_for('subjects') if session.get('user_id') else url_for('login') }}" class="btn-link">View Course</a>
+  </div>
+
+  <div class="card">
+    <div class="img-box2"></div>
+    <h3>Mathematics</h3>
+    <p class="card-copy">Quick access to maths units, revision videos, and quizzes.</p>
+    <a href="{{ url_for('subjects') if session.get('user_id') else url_for('login') }}" class="btn-link">View Course</a>
+  </div>
+
+  <div class="card">
+    <div class="img-box3"></div>
+    <h3>FPL</h3>
+    <p class="card-copy">Practice core programming concepts with organized resources.</p>
+    <a href="{{ url_for('subjects') if session.get('user_id') else url_for('login') }}" class="btn-link">View Course</a>
+  </div>
+</div>
+
+<section id="About" class="About">
+  <div class="about-section">
+    <div class="about-img"></div>
+    <div class="about-text">
+      <h2 class="section-title">About Us</h2>
+      <p>Empowering first-year engineering students with simple, structured, and free study resources.</p>
+      <p>Subject Notes | Curated Lectures | Interactive Quizzes</p>
+      <p>Built by students who get the struggle. Let's ace those exams together!</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container-contact">
+    <h2>Contact Us</h2>
+    <p class="section-note">Send a message and it will be stored by the Flask backend.</p>
+    <form id="contact-form" action="{{ url_for('contact') }}" method="post">
+      <label for="contact-name">Name</label>
+      <input type="text" id="contact-name" name="name" required>
+
+      <label for="contact-email">Email</label>
+      <input type="email" id="contact-email" name="email" required>
+
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<div class="footer">2026 MindMesh | Contact Us | Privacy Policy <br>
+<small>Follow us on Social Media</small>
+</div>
+
+<script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  gsap.to("#loader", {
+    opacity: 0,
+    duration: 1,
+    onComplete: () => {
+      loader.style.display = "none";
+    }
+  });
+});
+</script>
+</body>
+</html>

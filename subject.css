@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #0d1631, #1f355f);
+}
+
+.title-bar,
+.container,
+.card,
+.btn-link,
+h3,
+[class^="img-box"] {
+    transition: 0.3s ease-in-out;
+}
+
+.title-bar {
+    background: #0d1631;
+    color: #f0c674;
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #e5e7eb;
+    margin: 18px auto 6px;
+    max-width: 620px;
+}
+
+.page-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 14px 0 20px;
+    flex-wrap: wrap;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 50px 20px;
+    background: transparent;
+}
+
+.card {
+    background: #fff;
+    border: 2.5px solid #060609;
+    border-radius: 12px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #f0c674;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #1a2a5a;
+}
+
+.subject-copy {
+    color: #4b5563;
+    font-size: 14px;
+    min-height: 42px;
+}
+
+.card:hover h3 {
+    color: #0d1631;
+}
+
+[class^="img-box"] {
+    height: 150px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    transition: background-size 0.5s ease;
+}
+
+.card:hover [class^="img-box"] {
+    background-size: 110%;
+}
+
+.img-box1 {
+    background-image: url('https://img.freepik.com/free-vector/hand-drawn-chemistry-background-blackboard_23-2148162416.jpg?w=360');
+    color: #faf4f4;
+}
+
+.img-box2 {
+    background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR9IMXHcBEUC_SUlx4jREI8gX6O9LhD7nR62Iv796saqVTu5LoH');
+    color: #2e2929;
+}
+
+.img-box3 {
+    background-image: url('https://media2.dev.to/dynamic/image/width=1000,height=600,fit=cover,gravity=auto,format=auto/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i9tur75tgrnujcekzs83.png');
+    color: #f5eded;
+}
+
+.btn-link {
+    display: inline-block;
+    background: #e8d9ba;
+    color: #222;
+    padding: 10px 16px;
+    margin: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid #d8c8a8;
+    border-radius: 6px;
+}
+
+.btn-link:hover {
+    background: #d8c8a8;
+    transform: scale(1.05);
+}
+
+.btn-link:active {
+    transform: scale(0.95);
+}
+
+.footer {
+    background: #1a2a5a;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

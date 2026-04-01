@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>registeration form</title>
-<link rel="stylesheet" href="/static/registration.css">
+<title>Registration Form</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='registration.css') }}">
 </head>
 <body>
 <div class="container">
 <div class="registeration">Registration Form</div>
-<form action="/register" method="post">
+<p class="form-note">Create your account and the backend will store your profile details securely in the database.</p>
 
-<!-- {% with messages = get_flashed_messages(with_categories=true) %}
+{% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     <div class="flash-messages">
       {% for category, message in messages %}
@@ -18,13 +18,14 @@
       {% endfor %}
     </div>
   {% endif %}
-{% endwith %} -->
+{% endwith %}
 
+<form action="{{ url_for('register') }}" method="post">
 <div class="container2">
 
 <div class="inputbox">
 <span class="inputtext">Full Name</span>
-<input type="text" name="full_name" placeholder="enter your full name">
+<input type="text" name="full_name" placeholder="enter your full name" required>
 </div>
 
 <div class="inputbox">
@@ -34,12 +35,12 @@
 
 <div class="inputbox">
 <span class="inputtext">Email</span>
-<input type="email" name="email" placeholder="enter your email id">
+<input type="email" name="email" placeholder="enter your email id" required>
 </div>
 
 <div class="inputbox">
 <span class="inputtext">Phone Number</span>
-<input type="tel" name="phone" placeholder="enter your contact number">
+<input type="tel" name="phone" placeholder="enter your contact number" required>
 </div>
 
 <div class="inputbox">
@@ -51,12 +52,14 @@
 <span class="inputtext">Confirm Password</span>
 <input type="password" name="confirm_password" placeholder="confirm your password" required>
 </div>
-<div class="inputbox">
-    <a href="/template/index.html" class="lastinput">Register Your Data</a>
+
+<input class="lastinput" type="submit" value="Register Your Data">
+<div class="form-links">
+  <a href="{{ url_for('login') }}">Already have an account? Login</a>
+  <a href="{{ url_for('index') }}">Back to Home</a>
+</div>
 </div>
 </form>
-</div>  
 </div>
-<script src="/static/script.js"></script>
 </body>
 </html>

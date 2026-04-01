@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #020e1e, #12284a);
+    color: #120d16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.wrapper {
+    width: min(100%, 390px);
+    padding: 40px 32px;
+    background: #9396b3;
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+.wrapper h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 18px;
+    color: #1f2937;
+}
+
+.flash-messages {
+    margin: 0 0 14px;
+}
+
+.flash {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.flash.success {
+    background: rgba(34, 197, 94, 0.2);
+    color: #064e3b;
+}
+
+.flash.error {
+    background: rgba(239, 68, 68, 0.2);
+    color: #7f1d1d;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    padding: 0 42px 0 15px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #201c24;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    color: #111827;
+}
+
+.input-box i {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #374151;
+    font-size: 18px;
+}
+
+.input-box input:focus {
+    border-color: #c8c5ea;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.input-box input::placeholder {
+    color: #374151;
+}
+
+.btn {
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-radius: 50px;
+    background: #c8c5ea;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b5b1e0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.register-link a {
+    color: #151119;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
